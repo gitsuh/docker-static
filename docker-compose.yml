@@ -1,0 +1,15 @@
+# Usage:
+    #   docker-compose up --force-recreate
+    version: '3'
+
+    services:
+      docker-static:
+        image: "docker-static"
+        container_name: docker-static
+        hostname: docker-static
+        tty: true
+        volumes:
+          - /storage/nfs/staticweb:/usr/share/nginx/html/staticweb
+          - /storage/nfs/staticweb:/usr/www/html/staticweb
+        ports:
+          - 8000:90
